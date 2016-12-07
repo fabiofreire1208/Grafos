@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class GrafoListaAdj {
 
@@ -12,6 +10,9 @@ public class GrafoListaAdj {
 	private final int CINZA = 1;
 	private final int PRETO = 2;
 	private final int INFINITO = Integer.MAX_VALUE;
+	
+	private Integer tempoLargura;
+	private Integer tempoProfundidade;
 
 	public GrafoListaAdj(ArrayList<Vertice> vertices, ArrayList<LinkedList<Vertice>> grafo){
 		this.mVertices = vertices;
@@ -78,6 +79,37 @@ public class GrafoListaAdj {
 		}
 
 
+	}
+	
+	public void printCaminhoEmProfundidade(){
+		for (Vertice vertice : mVertices){
+			vertice.setCor(BRANCO);
+			vertice.setPredecessor(null);
+		}
+		tempoProfundidade = 0;
+		
+		for (Vertice vertice: mVertices){
+			if (vertice.getCor() == BRANCO)
+				buscaEmProfundidadeVisita(vertice);
+		}
+	}
+	
+	private void buscaEmProfundidadeVisita(Vertice v){
+		v.setCor(CINZA);
+		tempoProfundidade = tempoProfundidade + 1;
+		//Depois arrumar o tempo inicio cinza e fim preto
+//		v.setDistancia(tempoProfundidade);
+		
+		for(Vertice vertice : v.getVerticesProximos()){
+			if(vertice.getCor() == BRANCO){
+				vertice.setPredecessor(v);
+				buscaEmProfundidadeVisita(vertice);
+			}
+		}
+		
+		v.setCor(PRETO);
+		System.out.println(v.getVertice());
+		//fim = tempo = tempo + 1
 	}
 
 }

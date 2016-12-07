@@ -21,31 +21,25 @@ public class Main {
 		vertices.add(v5);
 		vertices.add(v6);
 		
-		LinkedList<Vertice> ligacaoV6 = new LinkedList<>();
-		ligacaoV6.add(v4);
+		LinkedList<Vertice> ligacaoV1 = new LinkedList<>();
+		ligacaoV1.add(v2);
+		ligacaoV1.add(v4);
 		
-		LinkedList<Vertice> ligacaoV4 = new LinkedList<>();
-		ligacaoV4.add(v6);
-		ligacaoV4.add(v3);
-		ligacaoV4.add(v5);
+		LinkedList<Vertice> ligacaoV2 = new LinkedList<>();
+		ligacaoV2.add(v5);
 		
 		LinkedList<Vertice> ligacaoV3 = new LinkedList<>();
-		ligacaoV3.add(v2);
-		ligacaoV3.add(v4);
+		ligacaoV3.add(v6);
+		ligacaoV3.add(v5);
+		
+		LinkedList<Vertice> ligacaoV4 = new LinkedList<>();
+		ligacaoV4.add(v2);
 		
 		LinkedList<Vertice> ligacaoV5 = new LinkedList<>();
 		ligacaoV5.add(v4);
-		ligacaoV5.add(v2);
-		ligacaoV5.add(v1);
 		
-		LinkedList<Vertice> ligacaoV2 = new LinkedList<>();
-		ligacaoV2.add(v3);
-		ligacaoV2.add(v5);
-		ligacaoV2.add(v1);
-		
-		LinkedList<Vertice> ligacaoV1 = new LinkedList<>();
-		ligacaoV1.add(v5);
-		ligacaoV1.add(v2);
+		LinkedList<Vertice> ligacaoV6 = new LinkedList<>();
+		ligacaoV6.add(v6);		
 		
 		ArrayList<LinkedList<Vertice>> grafo = new ArrayList<>();
 		grafo.add(ligacaoV1);
@@ -57,10 +51,9 @@ public class Main {
 		
 		
 		GrafoListaAdj meuGrafo = new GrafoListaAdj(vertices, grafo);
-		meuGrafo.printCaminhoEmLargura(v6);
+		meuGrafo.printCaminhoEmProfundidade();
 		meuGrafo.printGrafo();
 		
-		v6.printPredecessor();
 		
 	}
 
