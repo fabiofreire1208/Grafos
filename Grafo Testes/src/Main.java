@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Main {
@@ -35,16 +36,16 @@ public class Main {
 		ligacaoV5.add(v1);
 		ligacaoV5.add(v2);
 		
-		v1.setLigacao(ligacaoV1);
-		v1.printVesticesAdjacentes();
-		v2.setLigacao(ligacaoV2);
-		v2.printVesticesAdjacentes();
-		v3.setLigacao(ligacaoV3);
-		v3.printVesticesAdjacentes();
-		v4.setLigacao(ligacaoV4);
-		v4.printVesticesAdjacentes();
-		v5.setLigacao(ligacaoV5);
-		v5.printVesticesAdjacentes();
+		ArrayList<LinkedList<Vertice>> grafo = new ArrayList<>();
+		grafo.add(ligacaoV1);
+		grafo.add(ligacaoV2);
+		grafo.add(ligacaoV3);
+		grafo.add(ligacaoV4);
+		grafo.add(ligacaoV5);
+		
+		GrafoListaAdj meuGrafo = new GrafoListaAdj(grafo);
+		meuGrafo.printGrafo();
+		
 		
 	}
 
