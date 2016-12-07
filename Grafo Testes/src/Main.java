@@ -12,6 +12,14 @@ public class Main {
 		Vertice v4 = new Vertice(4);
 		Vertice v5 = new Vertice(5);
 		
+		ArrayList<Vertice> vertices = new ArrayList<>();
+		vertices.add(v1);
+		vertices.add(v2);
+		vertices.add(v3);
+		vertices.add(v4);
+		vertices.add(v5);
+		
+		
 		LinkedList<Vertice> ligacaoV1 = new LinkedList<>();
 		ligacaoV1.add(v2);
 		ligacaoV1.add(v5);
@@ -43,7 +51,8 @@ public class Main {
 		grafo.add(ligacaoV4);
 		grafo.add(ligacaoV5);
 		
-		GrafoListaAdj meuGrafo = new GrafoListaAdj(grafo);
+		GrafoListaAdj meuGrafo = new GrafoListaAdj(vertices, grafo);
+//		meuGrafo.printCaminhoEmLargura();
 		meuGrafo.printGrafo();
 		
 		

@@ -4,8 +4,14 @@ import java.util.LinkedList;
 public class GrafoListaAdj {
 	
 	private ArrayList<LinkedList<Vertice>> mGrafo;
+	private ArrayList<Vertice> mVertices;
 	
-	public GrafoListaAdj(ArrayList<LinkedList<Vertice>> grafo){
+	private final int BRANCO = 0;
+	private final int CINZA = 1;
+	private final int PRETO = 2;
+	
+	public GrafoListaAdj(ArrayList<Vertice> vertices, ArrayList<LinkedList<Vertice>> grafo){
+		this.mVertices = vertices;
 		this.mGrafo = grafo;
 		buildGrafo();
 	}
@@ -20,13 +26,20 @@ public class GrafoListaAdj {
 	
 	private void buildGrafo(){
 		for (int i = 0; i < mGrafo.size(); i++){
-			mGrafo.get(i).get(0).setLigacao(mGrafo.get(i));
+			
+			mVertices.get(i).setLigacao(mGrafo.get(i));
 		}
 	}
 	
 	public void printGrafo(){
 		for (int i = 0; i < mGrafo.size(); i++){
-			mGrafo.get(i).get(0).printVesticesAdjacentes();
+			mVertices.get(i).printVesticesAdjacentes();
+		}
+	}
+	
+	public void printCaminhoEmLargura(){
+		for (int i = 1; i < mGrafo.size(); i++){
+//			System.out.println(mGrafo.get(i).get(0).getVertice());
 		}
 	}
 

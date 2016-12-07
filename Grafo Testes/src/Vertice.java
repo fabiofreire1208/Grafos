@@ -22,7 +22,7 @@ public class Vertice {
 		
 		String imprimirLista;
 		
-		if(ligacao.isEmpty()){
+		if(ligacao.isEmpty() || ligacao == null){
 			imprimirLista = vertice + "->/";
 		} else {
 			imprimirLista = vertice + "->";
